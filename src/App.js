@@ -1,9 +1,10 @@
 import Container from 'components/Container/Container.js';
+import Feedback from 'components/Feedback/Feedback';
 
 function App() {
   return (
     <Container>
-      <p>Здесь все children</p>
+      <Feedback />
     </Container>
   );
 }
