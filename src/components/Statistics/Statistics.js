@@ -1,4 +1,3 @@
-import React from 'react';
 import s from './Statistics.module.css';
 
 function Statistics({ good, neutral, bad, total, positivePercentage }) {

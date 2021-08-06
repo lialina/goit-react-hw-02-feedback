@@ -1,23 +1,21 @@
-import React from 'react';
 import s from './FeedbackOptions.module.css';
 
-function FeedbackOptions({
-  onLeaveGoodFeedback,
-  onLeaveNeutralFeedback,
-  onLeaveBadFeedback,
-}) {
+function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <div className={s.container}>
-      <button type="button" onClick={onLeaveGoodFeedback}>
-        Good
-      </button>
-      <button type="button" onClick={onLeaveNeutralFeedback}>
-        Neutral
-      </button>
-      <button type="button" onClick={onLeaveBadFeedback}>
-        Bad
-      </button>
-    </div>
+    <ul className={s.list}>
+      {options.map(option => (
+        <li className={s.item} key={option}>
+          <button
+            type="button"
+            onClick={() => {
+              onLeaveFeedback(option);
+            }}
+          >
+            {option[0].toUpperCase() + option.slice(1)}
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }
 
